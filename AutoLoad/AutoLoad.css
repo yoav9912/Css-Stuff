@@ -1,0 +1,104 @@
+body{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page{
+    height: 200px;
+    width: 200px;
+}
+.container{
+  display: none;
+}
+label{
+    padding: 0;
+    margin: 0;
+}
+.isUpdating{
+    position: absolute;
+    top: calc(50% - 50px);
+    right: calc(50% - 75px);
+    background-color: rgb(255, 255, 255);
+    width: 150px;
+    height: 100px;
+    border-radius: 10%;
+    cursor: pointer;
+    border: 1px black solid;
+    box-shadow:inset 2px 2px 20px white ,
+                inset -2px 2px 2px black,
+                inset 2px 2px 2px black,
+                inset 2px -2px 2px black
+}
+label input[type="checkbox"]:checked ~ .isUpdating{
+   
+    box-shadow:inset 2px 2px 2px black ,
+    2px 2px 2px black; 
+
+}
+label input[type="checkbox"]:checked  ~ .isUpdating svg {
+    animation: animate 1.5s linear normal;
+    
+    width: 150px;
+    height: 100px;
+    fill: orangered;
+}
+label input[type="checkbox"]:not(:checked) ~ .isUpdating svg{
+    animation: animate-reversed 1.5s  normal;
+    animation-direction: alternate-reverse;
+}
+@keyframes animate{
+    0%{
+        opacity: 0.5;
+        fill: black;
+        transform: rotate(0deg);
+
+    }
+    50%{
+        rotate: 90deg;
+        fill: orange;
+        opacity: 0.7;
+    }
+    100%{
+        rotate: 100%;
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
+@keyframes animate-reversed{
+    0%{
+        opacity: 0.5;
+        transform: rotate(0deg);
+
+    }
+    50%{
+        rotate: 90deg;
+        fill: orange;
+        opacity: 0.7;
+    }
+    100%{
+        rotate: 100%;
+        opacity: 1;
+        fill: orange;
+        transform: rotate(360deg);
+    }
+}
+.isUpdating .icon {
+    
+    width: 150px;
+    height: 100px;
+    fill: rgba(0, 0, 0, 0.5);
+}
+.isUpdating .background {
+    display: none;
+}
+label input[type="checkbox"]:checked ~ .isUpdating .background {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 100px;
+    fill: orangered;
+    filter:blur(10px);
+}

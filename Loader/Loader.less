@@ -1,0 +1,25 @@
+.container { 
+    background-color: black;
+    height: 300px;
+    width: 150px;
+    position: absolute;
+    top : calc(50% - 150px);
+    right: calc(50% - 75px);
+}
+.container .light{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: calc(40px + 80px*(var(--i)));
+    right: calc(50% - 15px);
+    border-radius: 50%;
+}
+.container :first-child{
+    background-color: red;
+}
+.container :nth-child(2){
+    background-color: yellow;
+}
+.container :last-child{
+    background-color: green;
+}
