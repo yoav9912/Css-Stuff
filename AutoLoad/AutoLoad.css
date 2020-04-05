@@ -35,14 +35,15 @@ label input[type="checkbox"]:checked ~ .isUpdating{
     2px 2px 2px black; 
 
 }
-label input[type="checkbox"]:checked  ~ .isUpdating svg {
-    animation: animate 1.5s linear normal;
-    
+label input[type="checkbox"]:checked  ~ .isUpdating svg {  
     width: 150px;
     height: 100px;
     fill: orangered;
 }
-label input[type="checkbox"]:not(:checked) ~ .isUpdating svg{
+label input[type="checkbox"]:checked  ~ .isUpdating svg.animationsActivated{  
+    animation: animate 1.5s linear normal;
+}
+label input[type="checkbox"]:not(:checked) ~ .isUpdating svg.animationsActivated{
     animation: animate-reversed 1.5s  normal;
     animation-direction: alternate-reverse;
 }
