@@ -24,10 +24,7 @@ label{
     border-radius: 10%;
     cursor: pointer;
     border: 1px black solid;
-    box-shadow:inset 2px 2px 20px white ,
-                inset -2px 2px 2px black,
-                inset 2px 2px 2px black,
-                inset 2px -2px 2px black
+    box-shadow: inset 2px 2px 20px white, inset -2px 2px 1px 2px black, inset 2px 2px 1px 2px black, inset 2px -2px 2px 2px black, 0px 1px 3px 1px black;
 }
 label input[type="checkbox"]:checked ~ .isUpdating{
    
