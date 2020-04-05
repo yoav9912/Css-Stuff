@@ -45,7 +45,7 @@ label input[type="checkbox"]:checked  ~ .isUpdating svg.animationsActivated{
     animation: animate 1.5s normal;
 }
 label input[type="checkbox"]:not(:checked) ~ .isUpdating svg.animationsActivated{
-    animation: animate-reversed 1.5s  normal;
+    animation: animate-reversed 1.5s normal;
     animation-direction: alternate-reverse;
 }
 @keyframes animate{
@@ -83,7 +83,7 @@ label input[type="checkbox"]:not(:checked) ~ .isUpdating svg.animationsActivated
     100%{
         rotate: 100%;
         opacity: 1;
-        fill: orange;
+        fill: orangered;
         transform: rotate(0deg);
     }
 }
