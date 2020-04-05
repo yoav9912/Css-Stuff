@@ -18,19 +18,23 @@ label{
     position: absolute;
     top: calc(50% - 50px);
     right: calc(50% - 75px);
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(232, 229, 220 , 0.6);
     width: 150px;
     height: 100px;
     border-radius: 10%;
     cursor: pointer;
-    border: 1px black solid;
-    box-shadow: inset 2px 2px 20px white, inset -2px 2px 1px 2px black, inset 2px 2px 1px 2px black, inset 2px -2px 2px 2px black, 0px 1px 3px 1px black;
+    /* border: 2px black solid; */
+    /* box-shadow: inset 2px 2px 20px white, inset -2px -1px 1px 3px black, inset 2px 2px 2px 3px black, inset 2px -2px 6px 2px black, 0px 1px 1px 1px black; */
+    /* box-shadow: 2px 2px 3px 1px black, inset 2px 2px 11px 1px white; */
+    box-shadow: 5px 9px #999;
 }
-label input[type="checkbox"]:checked ~ .isUpdating{
-   
-    box-shadow:inset 2px 2px 2px black ,
-    2px 2px 2px black; 
+label input[type="checkbox"]:checked ~ .isUpdating.animationsActivated{
+    transform: translate(3px, 4px);
+}
 
+label input[type="checkbox"]:checked ~ .isUpdating{
+    box-shadow: 2px 5px #666;
+    filter: brightness(0.9);
 }
 label input[type="checkbox"]:checked  ~ .isUpdating svg {  
     width: 150px;
@@ -38,7 +42,7 @@ label input[type="checkbox"]:checked  ~ .isUpdating svg {
     fill: orangered;
 }
 label input[type="checkbox"]:checked  ~ .isUpdating svg.animationsActivated{  
-    animation: animate 1.5s linear normal;
+    animation: animate 1.5s normal;
 }
 label input[type="checkbox"]:not(:checked) ~ .isUpdating svg.animationsActivated{
     animation: animate-reversed 1.5s  normal;
@@ -48,7 +52,7 @@ label input[type="checkbox"]:not(:checked) ~ .isUpdating svg.animationsActivated
     0%{
         opacity: 0.5;
         fill: black;
-        transform: rotate(0deg);
+        transform: rotate(360deg);
 
     }
     50%{
@@ -56,16 +60,19 @@ label input[type="checkbox"]:not(:checked) ~ .isUpdating svg.animationsActivated
         fill: orange;
         opacity: 0.7;
     }
+    75%{
+        rotate: 30deg;
+    }
     100%{
         rotate: 100%;
         opacity: 1;
-        transform: rotate(360deg);
+        transform: rotate(0deg);
     }
 }
 @keyframes animate-reversed{
     0%{
         opacity: 0.5;
-        transform: rotate(0deg);
+        transform: rotate(360deg);
 
     }
     50%{
@@ -77,7 +84,17 @@ label input[type="checkbox"]:not(:checked) ~ .isUpdating svg.animationsActivated
         rotate: 100%;
         opacity: 1;
         fill: orange;
-        transform: rotate(360deg);
+        transform: rotate(0deg);
+    }
+}
+@keyframes clickAnimation{
+    0%{
+        top: calc(50% - 50px);
+    } 50%{
+    }
+    100%{
+        transform: translateY(4px);
+        top: calc(50% - 46px);
     }
 }
 .isUpdating .icon {
