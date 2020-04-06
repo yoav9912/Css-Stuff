@@ -25,12 +25,14 @@ label{
     border-radius: 10%;
     cursor: pointer;
     box-shadow: 5px 9px #999;
+    transition: linear 1.5s;
 }
 label input[type="checkbox"]:checked ~ .isUpdating{
     box-shadow: 2px 5px #666;
     filter: brightness(0.9);
 }
 label input[type="checkbox"]:checked ~ .isUpdating.animationsActivated{
+    
     transform: translate(3px, 4px);
 }
 
