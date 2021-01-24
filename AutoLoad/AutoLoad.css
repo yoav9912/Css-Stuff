@@ -55,7 +55,7 @@ label input[type="checkbox"]:not(:checked) ~ .isUpdating svg.animationsActivated
     height: 100%;
     fill: rgba(0, 0, 0, 0.5);
 }
-.isUpdating .background {
+label input[type="checkbox"]:not(:checked) ~ .isUpdating .background {
     display: none;
 }
 label input[type="checkbox"]:checked ~ .isUpdating .background {
@@ -92,9 +92,9 @@ label input[type="checkbox"]:checked ~ .isUpdating .background {
 }
 @keyframes animate-reversed{
     0%{
-        opacity: 0.5;
         transform: rotate(360deg);
-
+        display: block;
+        fill: rgba(0, 0, 0, 0.5);
     }
     50%{
         rotate: 90deg;

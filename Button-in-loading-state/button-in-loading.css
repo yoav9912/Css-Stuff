@@ -1,0 +1,43 @@
+.container{
+    width: 50px;
+    height: 20px;
+    position: relative;
+}
+.container * {
+    padding: 0;
+    margin: 0;
+}
+.button-in-loading{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.loading-dot{
+    position: absolute;
+    top: 50%;
+    height: 10%;
+    width: 4%;
+    border-radius: 50%;
+    right: calc(30% + 10%*var(--i));
+    background-color: black;
+    animation: animate 3s infinite;
+    animation-delay: calc(0.2s*var(--i));
+}
+@keyframes animate{
+    0%{
+        right: 100%;
+        display: block;
+    }50%{
+        right: calc(30% + 10%*var(--i));
+    }
+    60%{
+        right: calc(30% + 10%*var(--i));
+    }
+    100%{
+        right: 0%;
+    
+    }
+
+}
